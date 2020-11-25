@@ -25,7 +25,7 @@ export default function (request) {
 
         request.abort = () => xhr.abort();
 
-        xhr.open(request.method, request.getUrl(), true);
+        xhr.open(request.method, request.url, true);
 
         if (request.timeout) {
             xhr.timeout = request.timeout;
