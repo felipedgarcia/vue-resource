@@ -1,4 +1,5 @@
 /node_modules
 /test/specs.js
-.DS_Store
 dist
+
+.DS_Store
