@@ -25,11 +25,13 @@ export default function (request) {
 
         request.abort = () => xhr.abort();
 
+        let final_url = null;
         try {
-            xhr.open(request.method, request.getUrl(), true);
+            final_url = request.getUrl()
         } catch (error) {
-            xhr.open(request.method, request.url, true);
+            final_url = request.url
         }
+        xhr.open(request.method, final_url, true);
 
         if (request.timeout) {
             xhr.timeout = request.timeout;
