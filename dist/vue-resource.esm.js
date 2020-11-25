@@ -948,17 +948,15 @@ function xhrClient (request) {
 
     request.abort = function () {
       return xhr.abort();
-    };
+    }; // let final_url = null;
+    // try {
+    //     final_url = request.getUrl()
+    // } catch (error) {
+    //     final_url = request.url
+    // }
 
-    var final_url = null;
 
-    try {
-      final_url = request.getUrl();
-    } catch (error$$1) {
-      final_url = request.url;
-    }
-
-    xhr.open(request.method, final_url, true);
+    xhr.open(request.method, request.url, true);
 
     if (request.timeout) {
       xhr.timeout = request.timeout;
